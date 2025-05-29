@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", handleLoadedContent);
 function handleLoadedContent() {
     let form1 = document.getElementById("patient-form");
     if(form1){
+        const dateInput = document.getElementById("doa");
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.min = today;
+
         if (sessionStorage.getItem("fname")){
             form1.elements['fname'].value = sessionStorage.getItem("fname");
         } 
@@ -27,7 +31,7 @@ function handleLoadedContent() {
         if (sessionStorage.getItem("extraNotes")){
             form1.elements['extra'].value = sessionStorage.getItem("extraNotes");
         } 
-        form1.addEventListener("submit", validateForm);
+        form1.addEventListener("submit", validateForm, false);
     } else{
         console.log("Form1 is not loaded");
     }
@@ -74,16 +78,29 @@ function handleLoadedContent() {
 }
 
 function validateForm(event) {
-    event.preventDefault();
     let form1 = event.target;
-    sessionStorage.setItem("fname", form1.elements['fname'].value);
-    sessionStorage.setItem("mname", form1.elements['mname'].value);
-    sessionStorage.setItem("lname", form1.elements['lname'].value);
-    sessionStorage.setItem("age", form1.elements['age'].value);
-    sessionStorage.setItem("email", form1.elements['mail'].value);
-    sessionStorage.setItem("dateOfAppointment", form1.elements['doa'].value);
-    sessionStorage.setItem("reason", form1.elements['reason'].value);
-    sessionStorage.setItem("extraNotes", form1.elements['extra'].value);
-    window.location.href = "confirmation.html";
+    form1.classList.add('was-validated');
+    const selectedDate = new Date(form1.elements["doa"].value);
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+    if (selectedDate < currentDate) {
+    event.preventDefault();
+    form1.elements["doa"].classList.add("is-invalid");
+    }
+
+    if (!form1.checkValidity()) {
+      event.preventDefault();
+    } else{
+        event.preventDefault();
+        sessionStorage.setItem("fname", form1.elements['fname'].value.trim());
+        sessionStorage.setItem("mname", form1.elements['mname'].value.trim());
+        sessionStorage.setItem("lname", form1.elements['lname'].value.trim());
+        sessionStorage.setItem("age", form1.elements['age'].value.trim());
+        sessionStorage.setItem("email", form1.elements['mail'].value.trim());
+        sessionStorage.setItem("dateOfAppointment", form1.elements['doa'].value.trim());
+        sessionStorage.setItem("reason", form1.elements['reason'].value.trim());
+        sessionStorage.setItem("extraNotes", form1.elements['extra'].value.trim());
+        window.location.href = "confirmation.html";
+    }
 }
 
