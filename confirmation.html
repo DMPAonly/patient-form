@@ -7,18 +7,28 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-        <div>
-            <h2>Confirm Details</h2>
-            <ul class="list-group" id="confirmation-form">
-                <li class="list-group-item">Name: <p id="name"></p></li>
-                <li class="list-group-item">Age: <p id="age"></p></li>
-                <li class="list-group-item">Email ID: <p id="mail"></p></li>
-                <li class="list-group-item">Date of Appointment: <p id="doa"></p></li>
-                <li class="list-group-item">Reason of Appointment: <p id="roa"></p></li>
-                <li class="list-group-item">Extra Notes: <p id="extra"></p></li>
-                <button id="edit-btn" type="button" class="btn btn-secondary">Edit Application</button>
-                <button id="submit-btn" type="button" class="btn btn-primary">Confirm Submit</button>
-            </ul>
+        <div id="confirmation-form" class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow rounded">
+                        <div class="card-header bg-primary text-white text-center">
+                            <h4 class="mb-0">Confirm Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <p><strong>Name: </strong><span id="name"></span></p>
+                            <p><strong>Age: </strong><span id="age"></span></p>
+                            <p><strong>Email ID: </strong><span id="mail"></span></p>
+                            <p><strong>Date of Appointment: </strong><span id="doa"></span></p>
+                            <p><strong>Reason of Appointment: </strong><span id="roa"></span></p>
+                            <p><strong>Extra Notes: </strong><span id="extra"></span></p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <button id="edit-btn" type="button" class="btn btn-secondary me-2">Edit Application</button>
+                            <button id="submit-btn" type="button" class="btn btn-primary">Confirm Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">

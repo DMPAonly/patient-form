@@ -34,7 +34,11 @@ function handleLoadedContent() {
 
     let form2 = document.getElementById("confirmation-form");
     if(form2){
-        document.getElementById("name").textContent = sessionStorage.getItem("fname") + sessionStorage.getItem("mname") + sessionStorage.getItem("lname");
+        if(sessionStorage.getItem("mname")){
+            document.getElementById("name").textContent = sessionStorage.getItem("fname") + " " + sessionStorage.getItem("mname") + " " + sessionStorage.getItem("lname");
+        } else{
+            document.getElementById("name").textContent = sessionStorage.getItem("fname") + " " + sessionStorage.getItem("lname");
+        }
         document.getElementById("age").textContent = sessionStorage.getItem("age");
         document.getElementById("mail").textContent = sessionStorage.getItem("email");
         document.getElementById("doa").textContent = sessionStorage.getItem("dateOfAppointment");
