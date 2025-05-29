@@ -1,0 +1,88 @@
+#page-1{
+    background-color: #e3f2fd;
+}
+
+#page-2{
+    background-color: #e3f2fd;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333333;
+    margin: 0;
+    padding: 2rem;
+}
+
+.form-container{
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.input-fields{
+    background-color: #e8f0fe;
+}
+
+.custom-btn{
+    background-color: #4caf50;
+}
+
+.confirmation-form {
+  max-width: 500px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card-header {
+  background-color: #1976d2;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.card-body {
+  padding: 1.5rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.card-body p {
+  margin-bottom: 0.75rem 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: #f1f8ff;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #1976d2;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1565c0;
+}
+
+.btn-secondary {
+  background-color: #90a4ae;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #78909c;
+}
