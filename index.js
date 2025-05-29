@@ -63,6 +63,9 @@ function handleLoadedContent() {
     if(submitBtn){
         submitBtn.addEventListener("click", (event) => {
             event.preventDefault();
+
+            //add code to send form data to the Backend
+
             const ModalEle = document.getElementById("staticBackdrop");
             const Modal = new bootstrap.Modal(ModalEle);
             if(Modal){
